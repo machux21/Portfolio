@@ -1,4 +1,4 @@
-.App {
+body{
   background-color: #0093e9;
   background-image: radial-gradient(
     circle 610px at 5.2% 51.6%,
@@ -7,6 +7,9 @@
   );
   margin: 0 auto;
   padding: 0;
+}
+.App {
+
   font-family: sans-serif;
   text-align: center;
 }
