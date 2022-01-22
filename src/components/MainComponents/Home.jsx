@@ -11,6 +11,7 @@ const Container = styled.div`
   padding: 0;
   color: white;
   .social {
+    z-index: 100;
     position: fixed;
     height: 100vh;
     display: flex;
