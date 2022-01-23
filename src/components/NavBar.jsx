@@ -28,27 +28,42 @@ export default function NavBar() {
     <Nav>
       <ul>
         <li>
-          <NavLink to="/" activeClassName="active">
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+          >
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/about" activeClassName="active">
+          <NavLink
+            to="/about"
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+          >
             Who I am?
           </NavLink>
         </li>
         <li>
-          <NavLink to="/contact" activeClassName="active">
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+          >
             Contact Me
           </NavLink>
         </li>
         <li>
-          <NavLink to="/resume" activeClassName="active">
+          <NavLink
+            to="/resume"
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+          >
             CV
           </NavLink>
         </li>
         <li>
-          <NavLink to="/projects" activeClassName="active">
+          <NavLink
+            to="/projects"
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+          >
             Projects
           </NavLink>
         </li>

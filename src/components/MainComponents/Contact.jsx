@@ -1,4 +1,4 @@
-//import React, { useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 const Form = styled.form`
   width: 60vw;
@@ -6,7 +6,6 @@ const Form = styled.form`
   padding: 0;
   display: flex;
   flex-direction: column;
-  border: 2px solid white;
 
   label {
     display: block;
@@ -53,13 +52,37 @@ const Form = styled.form`
   }
 `;
 export default function () {
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+  const handleChange = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(data);
+    setData({
+      name: "",
+      email: "",
+      message: ""
+    });
+    e.target.reset();
+  };
   return (
     <div>
       <h3>Contact Me</h3>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <div className="name-email">
           <label htmlFor="name">Name</label>
-          <input id="name" name="name" type="text" placeholder="Name..." />
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Name..."
+            onChange={handleChange}
+          />
         </div>
         <div className="name-email">
           <label htmlFor="email">Email</label>
@@ -68,6 +91,7 @@ export default function () {
             type="email"
             name="email"
             placeholder="user@example.com"
+            onChange={handleChange}
           />
         </div>
         <div className="message">
@@ -76,6 +100,7 @@ export default function () {
             id="message"
             name="message"
             placeholder="Write a message..."
+            onChange={handleChange}
           />
         </div>
         <button type="submit">Send</button>
