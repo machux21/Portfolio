@@ -10,6 +10,9 @@ import Projects from "./components/MainComponents/Projects.jsx";
 export default function App() {
   return (
     <div className="App">
+      <div className="bg"></div>
+      <div className="bg bg2"></div>
+      <div className="bg bg3"></div>
       <Routes>
         <Route path="/" element={<Home />}>
           <Route path="/about" element={<About />} />
