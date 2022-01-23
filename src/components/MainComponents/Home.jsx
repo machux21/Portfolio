@@ -1,8 +1,10 @@
 import NavBar from "../NavBar.jsx";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
-import LinkedIn from "../../resources/linkedin.png";
-import gitHub from "../../resources/github.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-solid-svg-icons";
+//import LinkedIn from "../../resources/linkedin.png";
+//import gitHub from "../../resources/github.png";
 //giving styles to the container
 const Container = styled.div`
   width: 100vw;
@@ -35,7 +37,7 @@ const Container = styled.div`
         transform: translate(140px, 0);
       }
     }
-    img {
+    .icon {
       margin-left: 10px;
       width: 50px;
       height: 50px;
@@ -49,11 +51,11 @@ export default function Home() {
       <div className="social">
         <a href="http://" target="_blank" rel="noopener noreferrer">
           LinkedIn
-          <img src={LinkedIn} alt="linkedin link" />
+          <FontAwesomeIcon icon={faLinkedin} />
         </a>
         <a href="http://" target="_blank" rel="noopener noreferrer">
           GitHub
-          <img src={gitHub} alt="github link" />
+          <FontAwesomeIcon icon={faGithub} />
         </a>
       </div>
       <Outlet />
