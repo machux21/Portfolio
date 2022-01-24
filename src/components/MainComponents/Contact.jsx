@@ -26,28 +26,33 @@ export default function () {
     <div>
       <h3>Contact Me</h3>
       <Form onSubmit={handleSubmit}>
-        <div className="name-email">
+        <div>
           <label htmlFor="name">Name</label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            placeholder="Name..."
-            onChange={handleChange}
-          />
-          <Icon icon={faCheckCircle} />
-          <p>Holaaa</p>
+          <GrupoInput>
+            <Input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Name..."
+              onChange={handleChange}
+            />
+            <Icon icon={faCheckCircle} />
+          </GrupoInput>
+          {false && <p>Holaaa</p>}
         </div>
-        <div className="name-email">
+        <div>
           <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            placeholder="user@example.com"
-            onChange={handleChange}
-          />
-          <Icon icon={faCheckCircle} />
+          <GrupoInput>
+            <Input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="user@example.com"
+              onChange={handleChange}
+            />
+            <Icon icon={faCheckCircle} />
+          </GrupoInput>
+          {false && <p>Chauu</p>}
         </div>
         <div className="message">
           <label htmlFor="message">Message</label>
@@ -77,7 +82,7 @@ const Form = styled.form`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-
+  align-items: center;
   label {
     display: block;
     font-weight: 700;
@@ -85,30 +90,6 @@ const Form = styled.form`
     min-height: 40px;
     cursor: pointer;
   }
-
-  .name-email {
-    position: relative;
-    z-index: 90;
-    width: 100%;
-    border: 3px solid red;
-    input {
-      width: 90%;
-      height: 40px;
-      margin: 0 auto;
-      line-height: 40px;
-      font-size: 20px;
-      padding: 0 40px 0 10px;
-      border-radius: 5px;
-      border: 3px solid transparent;
-      transition: 0.3s ease all;
-      &:focus {
-        border: 3px solid ${colors.border};
-        outline: none;
-        box-shadow: 3px 0px 30px ${colors.border};
-      }
-    }
-  }
-
   .message {
     z-index: 90;
     margin-bottom: 20px;
@@ -123,6 +104,7 @@ const Form = styled.form`
       &:focus {
         outline: none;
         border: 3px solid ${colors.border};
+        box-shadow: 3px 0px 30px ${colors.border};
       }
     }
   }
@@ -130,6 +112,7 @@ const Form = styled.form`
     font-size: 12px;
     color: ${colors.error};
     margin-bottom: 0;
+    display: none;
   }
   button {
     margin: 0 auto;
@@ -142,11 +125,33 @@ const Form = styled.form`
     background-color: ${colors.border};
   }
 `;
+const GrupoInput = styled.div`
+  position: relative;
+  z-index: 90;
+  width: 100%;
+  border: 3px solid red;
+`;
+const Input = styled.input`
+  width: 90%;
+  height: 40px;
+  margin: 0 auto;
+  line-height: 40px;
+  font-size: 20px;
+  padding: 0 40px 0 10px;
+  border-radius: 5px;
+  border: 3px solid transparent;
+  transition: 0.3s ease all;
+  &:focus {
+    border: 3px solid ${colors.border};
+    outline: none;
+    box-shadow: 3px 0px 30px ${colors.border};
+  }
+`;
 const Icon = styled(FontAwesomeIcon)`
   position: absolute;
-  right: 26px;
-  bottom: 14px;
+  right: 28px;
+  bottom: 15px;
   z-index: 110;
-  color: black;
+  color: green;
   font-size: 16px;
 `;
